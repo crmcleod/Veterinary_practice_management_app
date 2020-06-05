@@ -17,6 +17,27 @@ class Animal
         @vet_id = options['vet_id'].to_i
     end
 
-    
+    def save()
+        sql = "INSERT INTO animals
+        (
+        name,
+        date_of_birth,
+        animal_type,
+        animal_breed,
+        owner_name,
+        owner_phone_number,
+        treatment_notes,
+        vet_id
+        )
+        VALUES
+        (
+        $1, $2, $3, $4, $5, $6, $7, $8
+        )
+        RETURNING id"
+        values = [@name, @date_of_birth, @animal_type, @animal_breed, @owner_name, @owner_phone_number, @treatment_notes, @vet_id]
+        result - SqlRunner.run(sql, values)
+        id = result.first['id']
+        @id = id
+    end
 
 end
