@@ -11,6 +11,7 @@ CREATE TABLE animals (
     name VARCHAR(255),
     date_of_birth VARCHAR(255),
     animal_type VARCHAR(255),
+    animal_breed VARCHAR(255),
     owner_name VARCHAR(255),
     owner_phone_number VARCHAR(255),
     treatment_notes TEXT,
