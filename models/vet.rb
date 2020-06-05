@@ -10,7 +10,6 @@ class Vet
     end
 
     def save()
-
         sql = "INSERT INTO vets
         (name) VALUES ($1)
         RETURNING id"

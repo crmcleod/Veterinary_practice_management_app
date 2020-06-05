@@ -35,7 +35,7 @@ class Animal
         )
         RETURNING id"
         values = [@name, @date_of_birth, @animal_type, @animal_breed, @owner_name, @owner_phone_number, @treatment_notes, @vet_id]
-        result - SqlRunner.run(sql, values)
+        result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
     end
