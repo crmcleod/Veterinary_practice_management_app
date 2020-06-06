@@ -1,9 +1,3 @@
-require('sinatra')
-require('sinatra/contrib/all')
-require_relative('../models/animal')
-require_relative('../models/vet')
-also_reload('../models/*')
-
 get '/animals' do #index
     @animals = Animal.all
     erb( :"animals/index")
