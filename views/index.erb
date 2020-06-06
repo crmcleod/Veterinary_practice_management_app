@@ -2,8 +2,10 @@
   <ul>
     <% for animal in @animals %>
       <li>
-        <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
+        <h4><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h4>
       </li>
+      <p> Animal type: <%=animal.type_breed%> </p>
+      <p> Date of birth: <%= animal.date_of_birth%></p>
     <% end %>
   </ul>
 </div>

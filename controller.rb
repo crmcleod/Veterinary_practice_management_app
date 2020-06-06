@@ -12,6 +12,10 @@ get '/admin' do
     erb( :admin)
 end
 
+get '/consultation' do
+    erb( :consultation)
+end
+
 get '/animals' do
     @animals = Animal.all
     erb( :index)
