@@ -46,8 +46,14 @@
                 <input id="medical-history" type="text" name="treatment_notes"/>
         </li>
         <li>
-            <label for="vet-id">Vet: </label>
-                <input id="vet-id" type="text" name="vet_id"/>
+            <label for="vet_select">Vet: </label>
+            <select name="vet_id" id="vet_select">
+                <% @vets.each do |vet| %>
+                    <option value=<%=vet.id%>><%=vet.name%></option>
+                    <%end%>
+                </select>
+
+                <%# <input id="vet-id" type="text" name="vet_id"/> %>
         </li>
             <input type="submit" value="Register animal">
         

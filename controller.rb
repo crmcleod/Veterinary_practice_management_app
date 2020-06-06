@@ -22,6 +22,7 @@ get '/animals' do #index
 end
 
 get '/animals/new' do
+    @vets=Vet.all
     erb(:animal_registration)
 end
 
