@@ -8,6 +8,10 @@ get '/homepage' do
     erb( :homepage)
 end
 
+get '/admin' do
+    erb( :admin)
+end
+
 get '/animals' do
     @animals = Animal.all
     erb( :index)
