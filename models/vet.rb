@@ -19,4 +19,11 @@ class Vet
         @id = id.to_i
     end
 
+    def update()
+        sql = "UPDATE vets
+        SET vet_name = $1 WHERE id = $2"
+        values = [@name, @id]
+        SqlRunner.run(sql, values)
+    end
+
 end
