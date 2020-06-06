@@ -58,6 +58,14 @@ class Animal
         SqlRunner.run(sql, values)
     end
 
+    def self.find_by_id(id)
+        sql = "SELECT * from animals
+        WHERE id = $1"
+        values = [id]
+        animals = SqlRunner.run(sql, values)
+        return Animal.map_item(animals)
+    end
+
     def self.all()
         sql = "SELECT * FROM animals"
         animal_data = SqlRunner.run(sql)
@@ -73,5 +81,5 @@ class Animal
         result = Animal.map_items(animal_data)
         return result.first
     end
-    
+
 end
