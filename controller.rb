@@ -43,12 +43,16 @@ post '/animals/:id' do
      redirect to "/animals/#{params['id']}"
 end
 
-
-
 post '/animals' do
     @animal = Animal.new( params )
     @animal.save()
     erb( :registered )
+end
+
+post '/animals/:id/delete' do
+    animal = Animal.find_by_id(params['id'])
+    animal.delete
+    redirect to '/animals'
 end
 
 
