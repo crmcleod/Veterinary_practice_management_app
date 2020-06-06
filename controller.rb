@@ -16,12 +16,22 @@ get '/consultation' do
     erb( :consultation)
 end
 
-get '/animals' do
+get '/animals' do #index
     @animals = Animal.all
     erb( :index)
 end
 
-get '/animals/:id' do
+get '/animals/new' do
+    erb(:animal_registration)
+end
+
+post '/animals' do
+    @animal = Animal.new( params )
+    @animal.save()
+    erb( :registered)
+end
+
+get '/animals/:id' do #show
     @animal = Animal.find_by_id(params[:id])
     erb( :show )
 end
