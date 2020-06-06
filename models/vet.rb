@@ -19,6 +19,20 @@ class Vet
         @id = id.to_i
     end
 
+    def self.find_by_id(id)
+        sql = "SELECT * from vets
+        WHERE id = $1"
+        values = [id]
+        vets = SqlRunner.run(sql, values)
+        return Vet.map_item(vets)
+    end
+
+    def self.all()
+        sql = "SELECT * FROM vets"
+        vet_data = SqlRunner.run(sql)
+        return Vet.map_items(vet_data)
+    end
+
     def update()
         sql = "UPDATE vets
         SET vet_name = $1 WHERE id = $2"
