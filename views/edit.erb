@@ -1,0 +1,32 @@
+<h2>Edit <%= @animal.name %></h2>
+<form method="POST" action="/animals/<%=@animal.id%>">
+    <ul>    
+    <li> Name: <%= @animal.name %> </li>
+<li> Date of birth: <%= @animal.date_of_birth %> </li>
+<li> Animal type: <%= @animal.type_breed %> </li>
+        <li>
+            <label for="owner">Owner name: </label>
+                <input id="owner" type="text" name="owner_name" value="<%=@animal.owner_name%>">
+        </li>
+        <li>
+            <label for="owner-number">Owner telephone number: </label>
+                <input id="owner-number" type="text" name="owner_phone_number" value="<%=@animal.owner_phone_number%>">
+        </li>
+        <li>
+            <label for="medical-history">Medical History: </label>
+                <input id="medical-history" type="text" name="treatment_notes" value="<%=@animal.treatment_notes%>"/>
+        </li>
+        <li>
+            <label for="vet_select">Vet: </label>
+            <select name="vet_id" id="vet_select" selected="<%=@animal.vet_id%>">
+                <% @vets.each do |vet| %>
+                    <option value=<%=vet.id%>><%=vet.name%></option>
+                    <%end%>
+                </select>
+
+                <%# <input id="vet-id" type="text" name="vet_id"/> %>
+        </li>
+            <input type="submit" value="Confirm new details">
+        
+    </ul>
+</form>

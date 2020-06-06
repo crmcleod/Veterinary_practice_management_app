@@ -12,13 +12,30 @@ get '/admin' do
     erb( :admin)
 end
 
-get '/consultation' do
-    erb( :consultation)
-end
+# get '/consultation' do
+#     erb( consulation/consultation)
+# end
 
 get '/animals' do #index
     @animals = Animal.all
     erb( :index)
+end
+
+get '/animals/:id' do #show
+    @animal = Animal.find_by_id(params[:id])
+    erb( :show )
+end
+
+get '/animals/:id/edit' do
+    @vets = Vet.all
+    @animal = Animal.find_by_id(params['id'])
+    erb(:edit)
+end
+
+post '/animals/:id' do
+     animal = Animal.new(params)
+     animal.update
+     redirect to "/animals/#{params['id']}"
 end
 
 get '/animals/new' do
@@ -32,7 +49,4 @@ post '/animals' do
     erb( :registered)
 end
 
-get '/animals/:id' do #show
-    @animal = Animal.find_by_id(params[:id])
-    erb( :show )
-end
+
