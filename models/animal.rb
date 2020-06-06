@@ -58,6 +58,12 @@ class Animal
         SqlRunner.run(sql, values)
     end
 
+    def delete()
+        sql = "DELTE FROM animals WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
     def self.find_by_id(id)
         sql = "SELECT * from animals
         WHERE id = $1"
