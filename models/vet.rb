@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./animal')
 
 class Vet
 
@@ -30,6 +31,14 @@ class Vet
         sql = "DELETE FROM vets WHERE id = $1"
         values = [@id]
         SqlRunner.run(sql,values)
+    end
+
+    def count_animals()
+        sql = "SELECT * FROM animals WHERE vet_id = $1"
+        values = [@id]
+        animals = SqlRunner.run(sql, values)
+        results = animals.map{ |animal| Animal.new(animal)}
+        return results.count
     end
 
     def self.find_by_id(id)
