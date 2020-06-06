@@ -26,4 +26,14 @@ class Vet
         SqlRunner.run(sql, values)
     end
 
+    def self.map_items(vet_data)
+        result = vet_data.map { |vet| Vet.new( vet )}
+        return result
+    end
+
+    def self.map_item(vet_data)
+        result = Vet.map_items(vet_data)
+        return result.first
+    end
+
 end
