@@ -89,7 +89,7 @@ class Animal
     end
 
     def type_breed
-        return "#{@animal_type}: #{@animal_breed}"
+        return "#{@animal_type} (#{@animal_breed})"
     end
 
 end
