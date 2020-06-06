@@ -21,6 +21,11 @@ get '/animals' do #index
     erb( :index)
 end
 
+get '/animals/new' do
+    @vets=Vet.all
+    erb(:animal_registration)
+end
+
 get '/animals/:id' do #show
     @animal = Animal.find_by_id(params[:id])
     erb( :show )
@@ -38,15 +43,12 @@ post '/animals/:id' do
      redirect to "/animals/#{params['id']}"
 end
 
-get '/animals/new' do
-    @vets=Vet.all
-    erb(:animal_registration)
-end
+
 
 post '/animals' do
     @animal = Animal.new( params )
     @animal.save()
-    erb( :registered)
+    erb( :registered )
 end
 
 
