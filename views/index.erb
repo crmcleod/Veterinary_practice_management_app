@@ -1,0 +1,9 @@
+<div class="list">
+  <ul>
+    <% for animal in @animals %>
+      <li>
+        <a href="/animals/<%= animal.id %>"><%= animal.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
