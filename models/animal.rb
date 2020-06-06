@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Animal
 
     attr_reader :id, :name, :date_of_birth, :vet_id, :animal_type, :animal_breed, :owner_name
-    attr_accessor :treatment_notes, :vet_id
+    attr_accessor :treatment_notes, :vet_id, :owner_phone_number
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -40,4 +40,38 @@ class Animal
         @id = id
     end
 
+    def update()
+        sql = "UPDATE animals
+        SET
+        (
+            owner_name,
+            owner_phone_number,
+            treatment_notes,
+            vet_id
+        )
+        =
+        (
+            $1, $2, $3, $4
+        )
+        WHERE id = $5"
+        values = [@owner_name, @owner_phone_number, @treatment_notes, @vet_id, @id]
+        SqlRunner.run(sql, values)
+    end
+
+    def self.all()
+        sql = "SELECT * FROM animals"
+        animal_data = SqlRunner.run(sql)
+        return Animal.map_items(animal_data)
+    end
+
+    def self.map_items(animal_data)
+        result = animal_data.map { |animal| Animal.new( animal )}
+        return result
+    end
+
+    def self.map_item(animal_data)
+        result = Animal.map_items(animal_data)
+        return result.first
+    end
+    
 end
