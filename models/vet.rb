@@ -19,6 +19,19 @@ class Vet
         @id = id.to_i
     end
 
+    def update()
+        sql = "UPDATE vets
+        SET vet_name = $1 WHERE id = $2"
+        values = [@name, @id]
+        SqlRunner.run(sql, values)
+    end
+
+    def delete()
+        sql = "DELETE FROM vets WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql,values)
+    end
+
     def self.find_by_id(id)
         sql = "SELECT * from vets
         WHERE id = $1"
@@ -31,13 +44,6 @@ class Vet
         sql = "SELECT * FROM vets"
         vet_data = SqlRunner.run(sql)
         return Vet.map_items(vet_data)
-    end
-
-    def update()
-        sql = "UPDATE vets
-        SET vet_name = $1 WHERE id = $2"
-        values = [@name, @id]
-        SqlRunner.run(sql, values)
     end
 
     def self.map_items(vet_data)
