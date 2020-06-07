@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Squada+One:regular);
+
+th{color: rgba(139, 94, 194, 0.722);
+font-style: underline;}
+td{text-align: center;}
 body {
     background-color: rgba(9, 58, 62, 0.331);
     font-family: "Squada One";
@@ -6,5 +10,13 @@ body {
 a:visited{color: rgb(234, 240, 240);}
 a:hover{color: coral;}
 ul {list-style: none;}
+label {border: none; 
+    width: 160px;
+    display: inline-block;
+    padding-block: 10px;
+background-origin: padding-box;}
+select{ width: 153px;
+display: inline-block;}
+
 
 

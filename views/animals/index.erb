@@ -1,11 +1,19 @@
-<div class="list">
-  <ul>
-    <% for animal in @animals %>
-      <li>
-        <h4><a href="/animals/<%= animal.id %>"><%= animal.name %></a></h4>
-      </li>
-      <p> Animal type: <%=animal.type_breed%> </p>
-      <p> Date of birth: <%= animal.date_of_birth%></p>
-    <% end %>
-  </ul>
-</div>
+<h1>Registered Animals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>|</th>
+    <th>Animal Type</th>
+    <th>|</th>
+    <th>Date of birth</th>
+  </tr>
+  <% for animal in @animals %>
+      <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+      <td>|</td>
+      <td><%=animal.type_breed%></td>
+      <td>|</td>
+      <td><%= animal.date_of_birth%></td>
+    </tr>
+  <% end %>
+</table>

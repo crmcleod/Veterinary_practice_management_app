@@ -17,13 +17,16 @@
                 <input id="medical-history" type="text" name="treatment_notes" value="<%=@animal.treatment_notes%>"/>
         </li>
         <li>
-            <label for="vet_select">Vet: </label>
-            <select name="vet_id" id="vet_select" selected="<%=@animal.vet_id%>">
+            <label for="vet-select">Vet: </label>
+            <select name="vet_id" id="vet-select" selected="<%=@animal.vet_id%>">
                 <% @vets.each do |vet| %>
-                    <option value=<%=vet.id%>><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
-
+                    <% if vet.id == @animal.vet_id %>
+                        <option value=<%=vet.id%> selected><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
+                    <% else %>
+                        <option value=<%=vet.id%>><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
                     <%end%>
-                </select>
+                <%end%>
+            </select>
         </li>
             <input type="submit" value="Confirm new details">
         

@@ -1,10 +1,14 @@
 <h1> Vet page </h1>
-
-<div class="list">
-  <ul>
+<table>
+  <tr>
+    <th>Veterinarian Name </th>
+    <th>|</th>
+    <th>Number of assigned animals</th>
+    </tr>
     <% for vet in @vets %>
-      <h4><a href="/vets/<%=vet.id%>"> Name: <%=vet.name%><a> </h4>
-      <p> Caring for: <%=vet.count_animals()%> </p>
-    <% end %>
-  </ul>
-</div>
+    <td><a href="/vets/<%=vet.id%>"><%=vet.name%><a></td>
+    <td>|</td>
+    <td><%=vet.count_animals()%></td>
+  </tr>
+  <% end %>
+</table>
