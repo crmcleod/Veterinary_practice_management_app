@@ -49,7 +49,7 @@
             <label for="vet_select">Vet: </label>
             <select name="vet_id" id="vet_select">
                 <% @vets.each do |vet| %>
-                    <option value=<%=vet.id%>><%=vet.name%></option>
+                    <option value=<%=vet.id%>><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
                     <%end%>
                 </select>
 
