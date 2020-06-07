@@ -33,3 +33,9 @@ post '/vets' do
     @vet.save()
     erb( :"vets/create")
 end
+
+post '/vets/:id/delete' do
+    vet = Vet.find_by_id(params['id'])
+    vet.delete
+    redirect to '/vets'
+end
