@@ -5,4 +5,5 @@ body {
 }
 a:visited{color: rgb(204, 219, 220);}
 a:hover{color: coral;}
+ul {list-style: none;}
 
