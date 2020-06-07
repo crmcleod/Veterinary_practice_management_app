@@ -1,1 +1,5 @@
-<p> Name: <%= @vet.name %> </p>
+<p> Vet: <%= @vet.name %> </p>
+<h4> Animals:<% for animal in @vet.animals%></h4>
+<hr/>
+<p><%=animal.name%> : <%=animal.type_breed%></p>
+<%end%>
