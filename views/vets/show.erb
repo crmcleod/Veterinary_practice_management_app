@@ -1,5 +1,5 @@
 <p> Vet: <%= @vet.name %> </p>
-<h4> Animals:<% for animal in @vet.animals%></h4>
+<h3> Animals:<% for animal in @vet.animals%></h3>
 <hr/>
-<p><%=animal.name%> : <%=animal.type_breed%></p>
+<p><a href="/animals/<%=animal.id%>"><%=animal.name%> : <%=animal.type_breed%></p>
 <%end%>
