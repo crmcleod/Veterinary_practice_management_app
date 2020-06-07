@@ -11,7 +11,25 @@ get '/vets' do #index
     erb( :"vets/index")
 end
 
+get '/vets/new' do
+    @animal=Animal.all
+    erb(:"vets/new")
+end
+
 get '/vets/:id' do #show
     @vet = Vet.find_by_id(params[:id])
+    @animal = @vet.animals
     erb( :"vets/show" )
+end
+
+post '/vets/:id' do
+    vet = Vet.new(params)
+    vet.update
+    redirect to "/vets/#{params['id']}"
+end
+
+post '/vets' do
+    @vet = Vet.new(params)
+    @vet.save()
+    erb( :"vets/create")
 end

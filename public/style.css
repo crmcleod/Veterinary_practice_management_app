@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Squada+One:regular);
 body {
-    background-color: rgba(9, 58, 62, 0.441);
+    background-color: rgba(9, 58, 62, 0.331);
     font-family: "Squada One";
 }
-a:visited{color: rgb(204, 219, 220);}
+a:visited{color: rgb(234, 240, 240);}
 a:hover{color: coral;}
 ul {list-style: none;}
 
