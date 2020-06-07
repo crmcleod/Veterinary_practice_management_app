@@ -59,6 +59,15 @@ class Animal
         SqlRunner.run(sql, values)
     end
 
+    def vet()
+        sql="SELECT * FROM vets where id = $1"
+        values = [@vet_id]
+        vet = SqlRunner.run(sql, values)
+        result = vet.map{|vet| Vet.new(vet)}
+        return result.first
+    end
+
+
     def delete()
         sql = "DELETE FROM animals WHERE id = $1"
         values = [@id]
