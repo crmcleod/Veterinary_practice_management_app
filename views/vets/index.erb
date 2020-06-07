@@ -3,7 +3,7 @@
 <div class="list">
   <ul>
     <% for vet in @vets %>
-      <p> Name: <%=vet.name%> </p>
+      <h4><a href="/vets/<%=vet.id%>"> Name: <%=vet.name%><a> </h4>
       <p> Caring for: <%=vet.count_animals()%> </p>
     <% end %>
   </ul>
