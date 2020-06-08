@@ -16,6 +16,7 @@ get '/animals/new' do
     erb(:"animals/new")
 end
 
+
 get '/animals/:id' do #show
     @animal = Animal.find_by_id(params[:id])
     @notes = @animal.get_notes
@@ -26,6 +27,11 @@ get '/animals/:id/edit' do
     @vets = Vet.all
     @animal = Animal.find_by_id(params['id'])
     erb(:"animals/edit")
+end
+
+get '/animals/:id/add_notes' do
+    @animal = Animal.find_by_id(params['id'])
+    erb(:"notes/new")
 end
 
 post '/animals/:id' do

@@ -1,0 +1,11 @@
+<form method="post" action="/notes">
+    <h4> Add new treatment/consultation notes</h4>
+    <ul>
+        <li>
+        <label for="treatment-notes">Notes:</label>
+        <input id ="treatment-notes" type="text" name="treatment_note" />
+        </li>
+            <input id="animal-id" type = "hidden" name="animal_id" value="<%=@animal.id%>"/>
+        <input type="submit" value="Save notes">
+    </ul>
+</form>

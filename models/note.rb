@@ -34,12 +34,6 @@ class Note
         SqlRunner.run(sql, values)
     end
 
-    # def self.all(id)
-    #     sql = "SELECT * FROM notes
-    #     WHERE id = $1"
-    #     values = [id]
-    #     notes = 
-
     def self.find_by_animal_id(animal_id)
         sql = "SELECT * FROM notes
         WHERE animal_id = $1"
@@ -56,6 +50,11 @@ class Note
         return Note.map_item(notes)
     end
 
+    def self.all()
+        sql = "SELECT * FROM notes"
+        note_data = SqlRunner.run(sql)
+        return Note.map_items(note_data)
+    end
 
     def self.map_items(note_data)
         result = note_data.map { |note| Note.new( note )}
