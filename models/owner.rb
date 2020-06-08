@@ -30,4 +30,22 @@ class Owner
         id = result.first['id']
         @id = id.to_i
     end
+
+    def update()
+        sql = "UPDATE owners
+        SET
+        (
+        vet_registration,
+        contact_number
+        )
+        VALUES
+        (
+        $1, $2
+        )
+        WHERE id = $3"
+        values = [@vet_registration, @contact_number]
+        SqlRunner.run(sql, values)
+    end
+
+
 end
