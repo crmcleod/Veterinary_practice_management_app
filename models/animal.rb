@@ -4,7 +4,7 @@ require_relative('./vet')
 class Animal
 
     attr_reader :id, :name, :date_of_birth, :vet_id, :animal_type, :animal_breed, :owner_name
-    attr_accessor :treatment_notes, :vet_id, :owner_phone_number
+    attr_accessor :treatment_note, :vet_id, :owner_phone_number
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -14,7 +14,7 @@ class Animal
         @animal_breed = options['animal_breed']
         @owner_name = options['owner_name']
         @owner_phone_number = options['owner_phone_number']
-        @treatment_notes = options['treatment_notes']
+        @treatment_note = options['treatment_note']
         @vet_id = options['vet_id'].to_i
     end
 
@@ -27,7 +27,7 @@ class Animal
         animal_breed,
         owner_name,
         owner_phone_number,
-        treatment_notes,
+        treatment_note,
         vet_id
         )
         VALUES
@@ -35,7 +35,7 @@ class Animal
         $1, $2, $3, $4, $5, $6, $7, $8
         )
         RETURNING id"
-        values = [@name, @date_of_birth, @animal_type, @animal_breed, @owner_name, @owner_phone_number, @treatment_notes, @vet_id]
+        values = [@name, @date_of_birth, @animal_type, @animal_breed, @owner_name, @owner_phone_number, @treatment_note, @vet_id]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
@@ -47,7 +47,7 @@ class Animal
         (
             owner_name,
             owner_phone_number,
-            treatment_notes,
+            treatment_note,
             vet_id
         )
         =
@@ -55,7 +55,7 @@ class Animal
             $1, $2, $3, $4
         )
         WHERE id = $5"
-        values = [@owner_name, @owner_phone_number, @treatment_notes, @vet_id, @id]
+        values = [@owner_name, @owner_phone_number, @treatment_note, @vet_id, @id]
         SqlRunner.run(sql, values)
     end
 
