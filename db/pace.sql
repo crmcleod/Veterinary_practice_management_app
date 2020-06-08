@@ -11,7 +11,8 @@ CREATE TABLE vets (
 CREATE TABLE owners (
     id serial primary key,
     name VARCHAR(255),
-    vet_registration BOOLEAN
+    vet_registration BOOLEAN,
+    contact_number VARCHAR(255)
 );
 
 CREATE TABLE animals (
