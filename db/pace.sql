@@ -22,5 +22,5 @@ CREATE TABLE animals (
 CREATE TABLE notes (
     id SERIAL primary key,
     treatment_note TEXT,
-    animal_id INT REFERENCES animals(id)
+    animal_id INT REFERENCES animals(id) ON DELETE CASCADE
 );

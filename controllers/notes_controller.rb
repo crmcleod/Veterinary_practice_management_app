@@ -6,7 +6,7 @@ require_relative('../models/note')
 
 also_reload( '../models/*' )
 
-get '/notes' do
-    @notes = Note.all
-    erb(:"notes/index")
-end
+# get '/notes' do
+#     @notes = Note.all
+#     erb(:"notes/index")
+# end

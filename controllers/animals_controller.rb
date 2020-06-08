@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/animal' )
 require_relative('../models/vet')
+require_relative('../models/note')
 
 also_reload( '../models/*' )
 
@@ -17,6 +18,7 @@ end
 
 get '/animals/:id' do #show
     @animal = Animal.find_by_id(params[:id])
+    @notes = @animal.get_notes
     erb( :"animals/show" )
 end
 
@@ -34,7 +36,9 @@ end
 
 post '/animals' do
     @animal = Animal.new( params )
+    @note = Note.new( params)
     @animal.save()
+    @note.save()
     erb( :"animals/create" )
 end
 

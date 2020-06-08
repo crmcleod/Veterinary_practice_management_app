@@ -72,7 +72,7 @@ class Animal
         sql ="SELECT * FROM notes where animal_id = $1"
         values = [@id]
         notes = SqlRunner.run(sql,values)
-        results = notes.map{ |note| Note.new(note)}
+        results = notes.map{|note| Note.new(note)}
         return results
     end
 

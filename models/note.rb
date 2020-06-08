@@ -4,7 +4,7 @@ require_relative('./animal')
 class Note
 
     attr_reader :id
-    attr_accessor :treatment_notes, :animal_id
+    attr_accessor :treatment_note, :animal_id
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -34,6 +34,11 @@ class Note
         SqlRunner.run(sql, values)
     end
 
+    # def self.all(id)
+    #     sql = "SELECT * FROM notes
+    #     WHERE id = $1"
+    #     values = [id]
+    #     notes = 
 
     def self.find_by_animal_id(animal_id)
         sql = "SELECT * FROM notes
