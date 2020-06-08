@@ -27,4 +27,11 @@ class Note
         @id = id
     end
 
+    def update()
+        sql = "UPDATE notes
+        SET treatment_note = $1 WHERE id = $2"
+        values = [@treatment_note, @id]
+        SqlRunner.run(sql, values)
+    end
+
 end
