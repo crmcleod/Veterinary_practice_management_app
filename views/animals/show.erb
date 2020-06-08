@@ -4,6 +4,7 @@
 <p> Owner name: <%= @animal.owner_name %> </p>
 <p> Owner contact number: <%= @animal.owner_phone_number %> </p>
 <p> Veterinarian: <% vet =@animal.vet%><%=vet.name%> </p>
+<p> Behavioural notes: <%=@animal.treatment_note%> </p>
 <p> Treatment notes<hr/> <% for note in @notes%> </p>
 <p><%=note.treatment_note%></p>
 <%end%>

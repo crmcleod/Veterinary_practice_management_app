@@ -36,9 +36,7 @@ end
 
 post '/animals' do
     @animal = Animal.new( params )
-    @note = Note.new( params)
     @animal.save()
-    @note.save()
     erb( :"animals/create" )
 end
 
