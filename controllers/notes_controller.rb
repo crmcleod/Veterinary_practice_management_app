@@ -26,5 +26,5 @@ end
 post '/notes' do
     @note = Note.new( params )
     @note.save()
-    erb(:"notes/create")
+    redirect to "/animals/#{@note.animal_id}"
 end
