@@ -69,7 +69,7 @@ class Animal
     end
 
     def get_notes()
-        sql ="SELECT * FROM notes where animal_id = $1"
+        sql ="SELECT * FROM notes where animal_id = $1 ORDER BY id DESC"
         values = [@id]
         notes = SqlRunner.run(sql,values)
         results = notes.map{|note| Note.new(note)}
