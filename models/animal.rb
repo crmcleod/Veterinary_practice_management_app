@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('./vet')
+require_relative('./note')
 
 class Animal
 
@@ -65,6 +66,14 @@ class Animal
         vet = SqlRunner.run(sql, values)
         result = vet.map{|vet| Vet.new(vet)}
         return result.first
+    end
+
+    def get_notes()
+        sql ="SELECT * FROM notes where animal_id = $1"
+        values = [@id]
+        notes = SqlRunner.run(sql,values)
+        results = notes.map{ |note| Note.new(note)}
+        return results
     end
 
 

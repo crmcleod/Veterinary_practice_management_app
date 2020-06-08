@@ -21,7 +21,7 @@ class Note
         ($1, $2
         )
         RETURNING id"
-        values = [@treament_note, @animal_id]
+        values = [@treatment_note, @animal_id]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id

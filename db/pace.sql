@@ -15,7 +15,6 @@ CREATE TABLE animals (
     animal_breed VARCHAR(255),
     owner_name VARCHAR(255),
     owner_phone_number VARCHAR(255),
-    treatment_note TEXT,
     vet_id INT REFERENCES vets(id)
 );
 
