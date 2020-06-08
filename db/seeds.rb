@@ -1,6 +1,7 @@
 require_relative('../models/animal')
 require_relative('../models/vet')
 require_relative('../models/note')
+require_relative('../models/owner')
 require('pry-byebug')
 
 vet1 = Vet.new({'name' => 'Matthew Chinnery'})
@@ -8,6 +9,19 @@ vet2 = Vet.new({'name' => 'James Heriott'})
 
 vet1.save()
 vet2.save()
+
+owner1 = Owner.new({'name' => 'Craig McLeod',
+    'vet_registration' => true,
+    'contact_number' => '07777777771'
+    })
+
+owner2 = Owner.new({'name' => 'Norville Rogers',
+    'vet_registration' => true,
+    'contact_number' => '555-123-1234' 
+    })
+
+owner1.save()
+owner2.save()
 
 animal1 = Animal.new({
     'name' => 'Sherry',
