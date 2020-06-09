@@ -30,6 +30,7 @@ get '/animals/:id/edit' do
 end
 
 get '/animals/:id/add_notes' do
+    @date = Note.date()
     @animal = Animal.find_by_id(params['id'])
     erb(:"notes/new")
 end

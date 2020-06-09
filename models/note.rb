@@ -36,7 +36,7 @@ class Note
         SqlRunner.run(sql, values)
     end
 
-    def date
+    def self.date
         time_grab = Time.now.to_s
         date_slice = time_grab.slice(0,19)
         return date_slice
