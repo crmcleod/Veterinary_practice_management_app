@@ -22,11 +22,23 @@ get '/vets/:id' do #show
     erb( :"vets/show" )
 end
 
+get '/vets/:id/edit' do
+    @vet = Vet.find_by_id(params['id'])
+    @animal = @vet.animals
+    erb(:"vets/edit")
+end
+
 post '/vets/:id' do
     vet = Vet.new(params)
     vet.update
     redirect to "/vets/#{params['id']}"
 end
+
+# get 'animals/:id/edit_vet' do
+#     @animal = Animal.find_by_id( params['id'])
+#     erb(:"vets/edit")
+#     en
+
 
 post '/vets' do
     @vet = Vet.new(params)

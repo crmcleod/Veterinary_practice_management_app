@@ -1,0 +1,20 @@
+<h2>Edit <%= @animal.name %></h2>
+<form method="POST" action="/animals/<%=@animal.id%>/edit_vet">
+    <ul>    
+    <li> Name: <%= @animal.name %> </li>
+        <li>
+            <<label for="vet-select">Vet: </label>
+            <select name="vet_id" id="vet-select" selected="<%=@animal.vet_id%>">
+                <% @vets.each do |vet| %>
+                    <% if vet.id == @animal.vet_id %>
+                        <option value=<%=vet.id%> selected><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
+                    <% else %>
+                        <option value=<%=vet.id%>><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
+                    <%end%>
+                <%end%>
+            </select>>
+        </li>
+            <input type="submit" value="Confirm new vet">
+        
+    </ul>
+</form>

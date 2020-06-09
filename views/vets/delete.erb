@@ -1,5 +1,5 @@
 <a href="/animals"> <h1> There are still animals assigned to this vet, please reassign them before removing vet</h1></a>
 <h3> Animals:<% for animal in @vet.animals%></h3>
 <hr/>
-<p><a href="/animals/<%=animal.id%>/edit"><%=animal.name%> : <%=animal.type_breed%></p></a>
+<p><a href="/animals/<%=animal.id%>/edit_vet"><%=animal.name%> : <%=animal.type_breed%></p></a>
 <%end%>

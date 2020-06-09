@@ -17,7 +17,7 @@
                 <input id="behavioural-notes" type="text" name="treatment_note" value="<%=@animal.treatment_note%>"/>
         </li>
         <li>
-            <label for="vet-select">Vet: </label>
+            <<label for="vet-select">Vet: </label>
             <select name="vet_id" id="vet-select" selected="<%=@animal.vet_id%>">
                 <% @vets.each do |vet| %>
                     <% if vet.id == @animal.vet_id %>
@@ -26,7 +26,7 @@
                         <option value=<%=vet.id%>><%=vet.name%> (Registered animals: <%=vet.count_animals%>)</option>
                     <%end%>
                 <%end%>
-            </select>
+            </select>>
         </li>
             <input type="submit" value="Confirm new details">
         

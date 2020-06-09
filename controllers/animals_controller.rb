@@ -35,6 +35,22 @@ get '/animals/:id/add_notes' do
     erb(:"notes/new")
 end
 
+get '/animals/:id/edit_vet' do
+    @vets= Vet.all()
+    @animal = Animal.find_by_id(params['id'])
+    @vet_id = @animal.vet_id
+    erb(:"vets/edit")
+end
+
+post '/animals/:id/edit_vet' do
+    animal = Animal.new(params)
+    @animal = Animal.new(params)
+    @vet = @animal.vet
+    vet_id = @vet.id
+    animal.update
+    redirect to "/vets"
+end
+
 post '/animals/:id' do
      animal = Animal.new(params)
      animal.update

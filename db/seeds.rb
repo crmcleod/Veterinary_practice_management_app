@@ -4,6 +4,8 @@ require_relative('../models/note')
 require_relative('../models/owner')
 require('pry-byebug')
 
+Animal.delete_all()
+
 vet1 = Vet.new({'name' => 'Matthew Chinnery'})
 vet2 = Vet.new({'name' => 'James Heriott'})
 

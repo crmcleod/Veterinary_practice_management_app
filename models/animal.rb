@@ -107,6 +107,11 @@ class Animal
         return result.first
     end
 
+    def self.delete()
+        sql = "DELETE * FROM animals;"
+        SqlRunner.run(sql)
+    end
+
     def type_breed
         return "#{@animal_type} (#{@animal_breed})"
     end
