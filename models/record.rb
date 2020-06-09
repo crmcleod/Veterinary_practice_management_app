@@ -15,6 +15,21 @@ class Record
         @owner_id = options['owner_id'].to_i
     end
 
-    # def save()
-    #     sql = "INSERT INTO records
+    def save()
+        sql = "INSERT INTO records
+        (
+        vet_id,
+        animal_id,
+        owner_id
+        )
+        VALUES
+        (
+        $1, $2, $3
+        )
+        returning id"
+        values = [@vet_id, @animal_id, @owner_id]
+        result = SqlRunner.run(sql, values)
+        id = result.first['id']
+        @id = id
+    end
 end
