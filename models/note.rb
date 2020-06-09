@@ -64,6 +64,13 @@ class Note
         return Note.map_items(note_data)
     end
 
+    def self.delete_all()
+        sql = "DELETE * FROM notes;"
+        SqlRunner.run(sql)
+    end
+
+
+
     def self.map_items(note_data)
         result = note_data.map { |note| Note.new( note )}
         return result

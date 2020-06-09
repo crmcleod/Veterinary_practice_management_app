@@ -8,13 +8,6 @@ CREATE TABLE vets (
     name VARCHAR(255)
 );
 
-CREATE TABLE owners (
-    id serial primary key,
-    name VARCHAR(255),
-    vet_registration BOOLEAN,
-    contact_number VARCHAR(255)
-);
-
 CREATE TABLE animals (
     id SERIAL primary key,
     name VARCHAR(255),

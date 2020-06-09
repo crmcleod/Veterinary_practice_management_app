@@ -107,7 +107,7 @@ class Animal
         return result.first
     end
 
-    def self.delete()
+    def self.delete_all()
         sql = "DELETE * FROM animals;"
         SqlRunner.run(sql)
     end
