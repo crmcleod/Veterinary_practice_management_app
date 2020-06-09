@@ -2,16 +2,6 @@ DROP TABLE notes;
 DROP TABLE animals;
 DROP TABLE owners;
 DROP TABLE vets;
-DROP TABLE records;
-
-CREATE TABLE records (
-    id SERIAL primary key,
-    vet_id INT REFERENCES vets(id),
-    owner_id INT REFERENCES owners(id),
-    animal_id INT REFERENCES animals(id),
-    note_id INT REFERENCES notes(id)
-);
-
 
 CREATE TABLE vets (
     id SERIAL primary key,
@@ -42,6 +32,6 @@ CREATE TABLE notes (
     id SERIAL primary key,
     treatment_note TEXT,
     date VARCHAR(255),
-    animal_id INT REFERENCES animals(id)
+    animal_id INT REFERENCES animals(id) ON DELETE CASCADE
 );
 
