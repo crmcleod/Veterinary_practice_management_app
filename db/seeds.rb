@@ -61,7 +61,6 @@ treatment_note2 = Note.new({
     'animal_id' => animal2.id})
 
 
-
 treatment_note1.save()
 treatment_note2.save()
 

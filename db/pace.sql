@@ -24,7 +24,7 @@ CREATE TABLE animals (
     owner_name VARCHAR(255),
     owner_phone_number VARCHAR(255),
     treatment_note TEXT,
-    vet_id INT REFERENCES vets(id) NOT NULL
+    vet_id INT REFERENCES vets(id)
 );
 
 CREATE TABLE notes (

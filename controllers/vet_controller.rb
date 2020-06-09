@@ -36,6 +36,14 @@ end
 
 post '/vets/:id/delete' do
     vet = Vet.find_by_id(params['id'])
-    vet.delete
-    redirect to '/vets'
+    @animal = Animal.all
+    @vets = Vet.all
+    @vet = vet
+    @animals = vet.animals
+        if vet.count_animals == 0
+            vet.delete
+            redirect to '/vets'
+        else
+            erb(:"vets/delete")
+        end
 end
