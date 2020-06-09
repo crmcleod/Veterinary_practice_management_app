@@ -34,12 +34,6 @@ post '/vets/:id' do
     redirect to "/vets/#{params['id']}"
 end
 
-# get 'animals/:id/edit_vet' do
-#     @animal = Animal.find_by_id( params['id'])
-#     erb(:"vets/edit")
-#     en
-
-
 post '/vets' do
     @vet = Vet.new(params)
     @vet.save()
