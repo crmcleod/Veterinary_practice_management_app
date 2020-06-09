@@ -46,12 +46,18 @@ animal2 = Animal.new({
 animal1.save()
 animal2.save()
 
+time_grab = Time.now.to_s
+time = time_grab.slice!(0,19)
+
+
 treatment_note1 = Note.new({
     'treatment_note' => 'Congestive heart failure',
+    'date' => time,
     'animal_id' => animal1.id})
 
 treatment_note2 = Note.new({
     'treatment_note' => 'Accidental ingestion of owners brownies',
+    'date' => time,
     'animal_id' => animal2.id})
 
 

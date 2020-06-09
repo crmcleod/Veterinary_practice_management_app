@@ -12,6 +12,7 @@ get '/notes/new' do
 end
 
 post '/notes' do
+    @date = @note.date
     @note = Note.new( params )
     @note.save()
     redirect to "/animals/#{@note.animal_id}"

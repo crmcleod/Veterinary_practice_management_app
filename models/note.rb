@@ -9,19 +9,21 @@ class Note
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @treatment_note = options['treatment_note']
+        @date = options['date']
         @animal_id = options['animal_id'].to_i
     end
 
     def save()
         sql = "INSERT INTO notes
         (treatment_note,
+        date,
         animal_id
         )
         VALUES
-        ($1, $2
+        ($1, $2, $3
         )
         RETURNING id"
-        values = [@treatment_note, @animal_id]
+        values = [@treatment_note, @date, @animal_id]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
@@ -32,6 +34,12 @@ class Note
         SET treatment_note = $1 WHERE id = $2"
         values = [@treatment_note, @id]
         SqlRunner.run(sql, values)
+    end
+
+    def date
+        time_grab = Time.now.to_s
+        date_slice = time_grab.slice(0,19)
+        return date_slice
     end
 
     def self.find_by_animal_id(animal_id)
