@@ -4,7 +4,7 @@ require_relative('./note')
 require_relative('./owner')
 require_relative('./animal')
 
-class Practice
+class Record
 
     attr_reader :id, :vet_id, :animal_id, :owner_id
 
@@ -15,4 +15,6 @@ class Practice
         @owner_id = options['owner_id'].to_i
     end
 
+    # def save()
+    #     sql = "INSERT INTO records
 end

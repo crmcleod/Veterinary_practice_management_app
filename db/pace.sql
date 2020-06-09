@@ -2,9 +2,9 @@ DROP TABLE notes;
 DROP TABLE animals;
 DROP TABLE owners;
 DROP TABLE vets;
-DROP TABLE practice;
+DROP TABLE records;
 
-CREATE TABLE practice (
+CREATE TABLE records (
     id SERIAL primary key,
     vet_id INT REFERENCES vets(id),
     owner_id INT REFERENCES owners(id),
