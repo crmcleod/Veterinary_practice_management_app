@@ -4,7 +4,7 @@ require_relative('./animal')
 class Note
 
     attr_reader :id
-    attr_accessor :treatment_note, :animal_id
+    attr_accessor :treatment_note, :animal_id, :date
 
     def initialize(options)
         @id = options['id'].to_i if options['id']

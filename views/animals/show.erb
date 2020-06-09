@@ -8,7 +8,8 @@
 <p> Treatment notes</p>
 <a href = "/animals/<%=@animal.id%>/add_notes">Add new consultation notes</a>
 <% for note in @notes%> </p>
-<p><%=note.treatment_note%></p>
+<p><%=note.date%>   |   <%=note.treatment_note%></p>
+
 <hr/>
 <%end%>
 <a href="/animals/<%=@animal.id %>/edit">Edit</a>
