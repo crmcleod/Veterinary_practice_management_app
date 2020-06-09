@@ -32,4 +32,11 @@ class Record
         id = result.first['id']
         @id = id
     end
+
+    def self.all()
+        sql = "SELECT * FROM records"
+        results = SqlRunner.run(sql)
+        return results.map { |record| Record.new(record)}
+    end
+    
 end
