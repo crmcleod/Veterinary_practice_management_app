@@ -38,5 +38,13 @@ class Record
         results = SqlRunner.run(sql)
         return results.map { |record| Record.new(record)}
     end
-    
+
+    def animal()
+        sql = "SELECT * FROM animals
+        WHERE id = $1"
+        values = [@animal_id]
+        results = SqlRunner.run(sql, values)
+        return Animal.new( results.first )
+    end
+
 end
