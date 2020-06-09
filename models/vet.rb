@@ -60,7 +60,7 @@ class Vet
     end
 
     def self.delete_all()
-        sql = "DELETE * FROM vets;"
+        sql = "DELETE FROM vets;"
         SqlRunner.run(sql)
     end
 

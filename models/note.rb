@@ -65,7 +65,7 @@ class Note
     end
 
     def self.delete_all()
-        sql = "DELETE * FROM notes;"
+        sql = "DELETE FROM notes;"
         SqlRunner.run(sql)
     end
 
