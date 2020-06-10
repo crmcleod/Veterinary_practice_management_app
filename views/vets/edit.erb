@@ -2,6 +2,10 @@
 <form method="POST" action="/animals/<%=@animal.id%>/edit_vet">
     <ul>    
     <li> Name: <%= @animal.name %> </li>
+                <input id="owner" type="hidden" name="owner_name" value="<%=@animal.owner_name%>">
+                <input id="owner-number" type="hidden" name="owner_phone_number" value="<%=@animal.owner_phone_number%>">
+                <input id="behavioural-notes" type="hidden" name="treatment_note" value="<%=@animal.treatment_note%>">
+    
         <li>
             <label for="vet-select">Vet: </label>
             <select name="vet_id" id="vet-select" selected="<%=@animal.vet_id%>">
