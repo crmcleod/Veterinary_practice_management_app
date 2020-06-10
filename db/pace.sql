@@ -5,7 +5,7 @@ DROP TABLE vets;
 
 CREATE TABLE vets (
     id SERIAL primary key,
-    name VARCHAR(255)
+    name VARCHAR(255),
 );
 
 CREATE TABLE animals (

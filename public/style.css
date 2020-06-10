@@ -1,8 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Chelsea+Market:regular);
-input[type=submit]{background-color: rgb(42, 99, 123); color: rgb(255, 255, 255);font-family: "Chelsea Market";}
-input[type=submit]:hover{background-color: rgb(227, 215, 167); }
+#delete{color: tomato;}
+nav{background-color: rgba(0, 0, 0, 0.064);}
+input[type=submit]{background-color: rgb(42, 99, 123); 
+    color: rgb(255, 255, 255);
+    font-family: "Chelsea Market";}
+
+input[type=submit]:hover{background-color:
+     rgb(227, 215, 167); }
+
 input{border-style: none;
-margin: 0.1em}
+margin: 0.1em;
+font-family: "Chelsea Market";}
 
 select{border-style: none;
 margin: 0.1em;
@@ -10,6 +18,8 @@ font-family: "Chelsea Market";}
 
 th{background-color: rgb(250, 244, 211); ;
 font-style: underline;}
+
+table{background-color: rgba(255, 255, 255, 0.29);}
 
 textarea{resize: both;
 font-family: "Chelsea Market";
