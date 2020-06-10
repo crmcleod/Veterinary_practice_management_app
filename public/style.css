@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Chelsea+Market:regular);
 #delete{color: tomato;}
 nav{background-color: rgba(0, 0, 0, 0.064);}
+
 input[type=submit]{background-color: rgb(42, 99, 123); 
     color: rgb(255, 255, 255);
     font-family: "Chelsea Market";}
@@ -19,7 +20,8 @@ font-family: "Chelsea Market";}
 th{background-color: rgb(250, 244, 211); ;
 font-style: underline;}
 
-table{background-color: rgba(255, 255, 255, 0.29);}
+table{background-color: rgba(255, 255, 255, 0.29);
+border-spacing: 0.3em;}
 
 textarea{resize: both;
 font-family: "Chelsea Market";
