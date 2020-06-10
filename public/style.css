@@ -1,22 +1,47 @@
-@import url(https://fonts.googleapis.com/css?family=Squada+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Chelsea+Market:regular);
+input[type=submit]{background-color: rgb(42, 99, 123); color: rgb(255, 255, 255);font-family: "Chelsea Market";}
+input[type=submit]:hover{background-color: rgb(227, 215, 167); }
+input{border-style: none;
+margin: 0.1em}
 
-th{color: rgba(139, 94, 194, 0.722);
+select{border-style: none;
+margin: 0.1em;
+font-family: "Chelsea Market";}
+
+th{background-color: rgb(250, 244, 211); ;
 font-style: underline;}
+
+textarea{resize: both;
+font-family: "Chelsea Market";
+font-weight: 50;
+border-style: none;}
+
 td{text-align: center;}
+
 body {
-    background-color: rgba(9, 58, 62, 0.331);
-    font-family: "Squada One";
+    background-size: auto;
+    background-image: url(tracks.png);
+    background-color: rgba(58, 105, 142, 0.331);
+    font-family: "Chelsea Market";
 }
-a:visited{color: rgb(234, 240, 240);}
+a{text-decoration: none; 
+    color: rgb(240, 242, 242)}
+
+a:visited{color: rgb(240, 242, 242);}
+
 a:hover{color: coral;}
+
 ul {list-style: none;}
+
 label {border: none; 
     width: 160px;
     display: inline-block;
     padding-block: 10px;
 background-origin: padding-box;}
+
 select{ width: 153px;
-display: inline-block;}
+display: inline-block;
+font-family: "Chelsea Market";}
 
 
 

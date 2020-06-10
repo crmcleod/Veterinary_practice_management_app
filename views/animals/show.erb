@@ -2,9 +2,12 @@
 <p> Date of birth: <%= @animal.date_of_birth %> </p>
 <p> Animal type: <%= @animal.type_breed %> </p>
 <p> Owner name: <%= @animal.owner_name %> </p>
-<p> Owner contact number: <%= @animal.owner_phone_number %> </p>
+<p> Contact number: <%= @animal.owner_phone_number %> </p>
 <p> Veterinarian: <% vet =@animal.vet%><%=vet.name%> </p>
 <p> Behavioural notes: <%=@animal.treatment_note%> </p>
+<form action="/animals/<%=@animal.id %>/edit"><input type="submit" value="Edit details"></form>
+<form action="/animals/<%=@animal.id %>/delete" method="POST"><input type="submit" value="Remove from system"></form>
+
 <p> Treatment notes</p>
 <a href = "/animals/<%=@animal.id%>/add_notes">Add new consultation notes</a>
 <% for note in @notes%> </p>
@@ -12,5 +15,5 @@
 
 <hr/>
 <%end%>
-<a href="/animals/<%=@animal.id %>/edit">Edit</a>
-<form action="/animals/<%=@animal.id %>/delete" method="POST"><input type="submit" value="Remove"></form>
+
+

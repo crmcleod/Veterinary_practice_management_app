@@ -1,19 +1,18 @@
 <h1>Registered Animals</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>|</th>
-    <th>Animal Type</th>
-    <th>|</th>
-    <th>Date of birth</th>
-  </tr>
-  <% for animal in @animals %>
-      <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-      <td>|</td>
-      <td><%=animal.type_breed%></td>
-      <td>|</td>
-      <td><%= animal.date_of_birth%></td>
+
+    <tr>
+      <th>Name</th>
+      <th>Animal Type</th>
+      <th>Date of birth</th>
     </tr>
-  <% end %>
+    <% for animal in @animals %>
+    <tr>
+        <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+        <td><%=animal.type_breed%></td>
+        <td><%= animal.date_of_birth%></td>
+    <% end %>
+    </tr>
+
 </table>
