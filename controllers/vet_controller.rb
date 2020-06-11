@@ -18,7 +18,7 @@ end
 
 get '/vets/:id' do #show
     @vet = Vet.find_by_id(params[:id])
-    @animal = @vet.animals
+    @animals = @vet.animals
     erb( :"vets/show" )
 end
 
