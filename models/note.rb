@@ -35,6 +35,7 @@ class Note
         values = [@treatment_note, @id]
         SqlRunner.run(sql, values)
     end
+    
 
     def self.date
         time_grab = Time.now.to_s

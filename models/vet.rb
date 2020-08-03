@@ -33,6 +33,15 @@ class Vet
         SqlRunner.run(sql,values)
     end
 
+    
+#   define function animals taking in no parameters
+#   set variable sql to sql code "select all from table animals where the vet_id property is equal the placeholder $1"
+#   set values to be id of object
+#   set animals equal to SqlRunner being run passing in sql and value arguments
+#   set results to be the animals variable mapped instantiating a new instance of Animal for each animal object
+#   return results
+#   end function
+
     def animals()
         sql = "SELECT * FROM animals WHERE vet_id = $1"
         values = [@id]
