@@ -1,7 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Chelsea+Market:regular);
 #delete{color: tomato;}
-nav{background-color: rgba(0, 0, 0, 0.064);}
-
+nav{background-color: rgba(0, 0, 0, 0.064);
+    width: 100%;
+    padding-left: 5vw;
+    font-size: 2vw;}
+h1{text-align: center;}
 input[type=submit]{background-color: rgb(42, 99, 123); 
     color: rgb(255, 255, 255);
     font-family: "Chelsea Market";}
@@ -20,8 +23,13 @@ font-family: "Chelsea Market";}
 th{background-color: rgb(250, 244, 211); ;
 font-style: underline;}
 
-table{background-color: rgba(255, 255, 255, 0.29);
-border-spacing: 0.3em;}
+table{
+    width: 75%;
+    margin-top: 3vw;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.29);
+    border-spacing: 0.3em;}
 
 textarea{resize: both;
 font-family: "Chelsea Market";
@@ -35,6 +43,7 @@ body {
     background-image: url(tracks.png);
     background-color: rgba(58, 105, 142, 0.331);
     font-family: "Chelsea Market";
+    font-size: x-large;
 }
 a{text-decoration: none; 
     color: rgb(240, 242, 242)}
@@ -46,12 +55,11 @@ a:hover{color: coral;}
 ul {list-style: none;}
 
 label {border: none; 
-    width: 160px;
+    width: 250px;
     display: inline-block;
-    padding-block: 10px;
-background-origin: padding-box;}
+    background-origin: padding-box;}
 
-select{ width: 153px;
+select{ width: 170px;
 display: inline-block;
 font-family: "Chelsea Market";}
 
