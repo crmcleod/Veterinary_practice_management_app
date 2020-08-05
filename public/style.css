@@ -14,7 +14,8 @@ input[type=submit]:hover{background-color:
 
 input{border-style: none;
 margin: 0.1em;
-font-family: "Chelsea Market";}
+font-family: "Chelsea Market";
+font-size: 1.2vw;}
 
 select{border-style: none;
 margin: 0.1em;
@@ -24,7 +25,7 @@ th{background-color: rgb(250, 244, 211); ;
 font-style: underline;}
 
 table{
-    width: 75%;
+    width: 80%;
     margin-top: 3vw;
     margin-right: auto;
     margin-left: auto;
@@ -35,7 +36,11 @@ textarea{resize: both;
 font-family: "Chelsea Market";
 font-weight: 50;
 border-style: none;}
-
+#datecolumn{
+    white-space: nowrap;
+    font-size: auto;
+    width: 16vw;
+}
 td{text-align: center;}
 
 body {
@@ -59,7 +64,9 @@ label {border: none;
     display: inline-block;
     background-origin: padding-box;}
 
-select{ width: 170px;
+select{ 
+font-size: auto;
+width: 14.5vw;
 display: inline-block;
 font-family: "Chelsea Market";}
 
