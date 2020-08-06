@@ -112,7 +112,6 @@ class Animal
         SqlRunner.run(sql)
     end
     
-#define a function - type_breed - which returns a single string of the animal type and breed, of a given animal instance
     def type_breed
         return "#{@animal_type} (#{@animal_breed})"
     end
