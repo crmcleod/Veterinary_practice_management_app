@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
-gem 'sinatra', '1.1.0'
-gem 'sinatra-sequel'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'pg'
+ruby '2.6.5'
