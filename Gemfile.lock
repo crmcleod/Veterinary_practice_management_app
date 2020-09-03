@@ -2,9 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     rack (1.6.13)
+    sequel (5.36.0)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
+    sinatra-sequel (0.9.0)
+      sequel (>= 3.2.0)
+      sinatra (>= 0.9.4)
     tilt (1.4.1)
 
 PLATFORMS
@@ -12,6 +16,7 @@ PLATFORMS
 
 DEPENDENCIES
   sinatra (= 1.1.0)
+  sinatra-sequel
 
 BUNDLED WITH
    2.1.4
