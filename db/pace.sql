@@ -1,7 +1,7 @@
-DROP TABLE notes;
-DROP TABLE animals;
-DROP TABLE owners;
-DROP TABLE vets;
+DROP TABLE  IF EXISTS notes;
+DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTSowners;
+DROP TABLE IF EXISTS vets;
 
 CREATE TABLE vets (
     id SERIAL primary key,
