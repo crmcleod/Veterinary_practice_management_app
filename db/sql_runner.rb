@@ -10,8 +10,8 @@ class SqlRunner
         user: 'onbdnrjflwehfx',
         password: '15aabee68c62ed545d87494caa60f919ae67a9ce34c1942d97cf6713e91dce55'
         })
-      db.prepare("query", sql)
-      result = db.exec_prepared("query", values)
+      db.prepare('query', sql)
+      result = db.exec_prepared('query', values)
     ensure
       db.close() if db != nil
     end
