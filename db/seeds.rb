@@ -2,7 +2,7 @@ require('pg')
 require_relative('../models/animal')
 require_relative('../models/vet')
 require_relative('../models/note')
-require('pry-byebug')
+# require('pry-byebug')
 
 Animal.delete_all()
 Vet.delete_all()
@@ -55,5 +55,5 @@ treatment_note2 = Note.new({
 treatment_note1.save()
 treatment_note2.save()
 
-binding.pry
+# binding.pry
 nil
