@@ -9,5 +9,5 @@ require_relative('./models/note.rb')
 require_relative('./models/vet.rb')
 
 get '/' do
-    redirect to("/animals")
+    erb ( :index )
 end
