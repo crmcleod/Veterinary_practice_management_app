@@ -7,7 +7,12 @@
       <th>Animal Type</th>
       <th>Date of birth</th>
     </tr>
-   
+    <% for animal in @animals %>
+    <tr>
+        <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+        <td><%=animal.type_breed%></td>
+        <td><%= animal.date_of_birth%></td>
+    <% end %>
     </tr>
 
 </table>
