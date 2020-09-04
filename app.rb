@@ -5,5 +5,5 @@ require_relative('controllers/vet_controller')
 require_relative('controllers/notes_controller')
 
 get '/' do
-    redirect to ('/animals')
+    erb ( :index )
 end
