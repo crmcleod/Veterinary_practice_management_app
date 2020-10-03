@@ -1,4 +1,10 @@
-# Brief:
+# PACE Vet Management App:
+
+This is my first ever full stack, solo programming project, created in week 5 of a 16 week development bootcamp at CodeClan.
+
+[Demo available here!](https://pace-vet-management-app.herokuapp.com)
+
+## Brief:
 ## Vet Management App
     A veterinary practice has approached you to build a web application to help them manage their animals and vets. 
 

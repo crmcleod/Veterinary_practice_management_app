@@ -5,7 +5,8 @@ class SqlRunner
   def self.run(sql, values = [])
     begin
       # db = PG.connect({dbname: 'pace_vma', host: 'localhost'})
-      db = PG.connect({dbname: 'df1b1fpld8s6a7', 
+      db = PG.connect({
+      dbname: 'df1b1fpld8s6a7', 
       host: 'ec2-3-248-4-172.eu-west-1.compute.amazonaws.com', 
       port: 5432, 
       user: 'onbdnrjflwehfx',
